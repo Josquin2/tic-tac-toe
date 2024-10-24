@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline-width: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
