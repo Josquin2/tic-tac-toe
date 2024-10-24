@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Reactive } from "vue";
-import type { User, responseUser } from "~/types/User";
+import type { responseUser } from "~/types/User";
 
 async function login() {
   if (password.value && username.value) {
@@ -19,9 +19,6 @@ async function login() {
 
     console.log(response);
   }
-  // here is post function should be
-  // if response is good
-  // router.push('play')
 }
 
 async function register() {
@@ -59,17 +56,20 @@ function onButtonClick(type: string) {
 
 onMounted(async () => {
   console.log("nothing here");
+
+  const user = JSON.parse(localStorage.getItem("user") ?? "null");
+  if (user) {
+    router.push("/main-page");
+  }
 });
 
 const username = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-const data: Ref<responseUser | {}> = ref({});
 
 const router = useRouter();
 
 const button = ref("Login");
-const confirmPasswordShow = ref(true);
 </script>
 
 <template>
