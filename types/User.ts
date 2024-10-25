@@ -2,6 +2,8 @@ export interface User {
   id: number;
   username: string;
   password: string;
+  sign: string;
+  socketId: string;
 }
 
 export interface responseUser {
