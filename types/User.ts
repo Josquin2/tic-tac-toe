@@ -6,5 +6,6 @@ export interface User {
 
 export interface responseUser {
   status: number;
+  error: string;
   user: User;
 }

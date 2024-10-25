@@ -1,0 +1,39 @@
+@keyframes show-input {
+  0% {
+    margin-top: 0rem;
+    height: 0rem;
+    display: none;
+  }
+  30% {
+    border: 1px solid #e1e1e1;
+  }
+  70% {
+    margin-top: 1.9rem;
+    height: 2.4rem;
+  }
+  100% {
+    margin-top: 2rem;
+    height: 2.5rem;
+    display: block;
+  }
+}
+
+@keyframes hide-input {
+  0% {
+    border: 1px solid #e1e1e1;
+    margin-top: 2rem;
+    height: 2.5rem;
+  }
+  20% {
+    border: 0px solid #e1e1e1;
+  }
+  70% {
+    margin-top: 0.1rem;
+    height: 0.1rem;
+  }
+  100% {
+    margin-top: 0rem;
+    height: 0rem;
+    display: none;
+  }
+}
