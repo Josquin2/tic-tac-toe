@@ -10,6 +10,7 @@ export default defineEventHandler(async (event) => {
   try {
     const db = await getDB();
 
+    // Check if the username exists
     const rows: User[] = await db
       .select()
       .from(usersTable)
@@ -17,18 +18,30 @@ export default defineEventHandler(async (event) => {
       .execute();
 
     if (rows.length > 0) {
+      // Check if the password matches
       if (hashPassword(body.password) === rows[0].password) {
         return {
           status: 200,
           user: rows[0],
         };
       } else {
-        return "Wrong password";
+        return {
+          status: 401,
+          error: "Wrong password",
+        };
       }
     } else {
-      return { error: "User not found" };
+      return {
+        status: 404,
+        error: "User not found",
+      };
     }
   } catch (error) {
-    return error;
+    console.error("Database connection error: ", error);
+    return {
+      status: 500,
+      error: "Database connection error",
+      details: error,
+    };
   }
 });
