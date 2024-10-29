@@ -1,1 +1,0 @@
-import{j as n,k as u,u as a}from"./nQZhfqKX.js";const r=n({__name:"index",setup(s){u(()=>{t()});function t(){const o=a(),e=localStorage.getItem("auth")||"";e&&e!=""||(o.push("/auth"),console.log("you are not logged!"))}return(o,e)=>null}});export{r as default};
