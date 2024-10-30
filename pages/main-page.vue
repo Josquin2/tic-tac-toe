@@ -1,40 +1,65 @@
-<script setup lang="ts">
-function onPlayRandomClick() {
-  router.push("/online");
-}
-const router = useRouter();
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="main-page">
-    <h2 style="text-align: center">Hello there!</h2>
-    <div class="play-button">
-      <button class="random-player-button" @click="onPlayRandomClick()">
-        Play with random
-      </button>
-      <button>Play with friend</button>
+  <div class="main-page-block">
+    <div class="all-about-user-block">
+      <div class="main-page-left">
+        <MainUser />
+        <MainPlayBlock />
+      </div>
+
+      <div class="main-page-right">
+        <MainFriends />
+        <div class="chat-block right--block">
+          <!-- here should be chat or something -->
+        </div>
+      </div>
+    </div>
+
+    <div class="news-block">
+      <div class="news-heading"></div>
+
+      <div class="all-news"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.main-page {
+.main-page-block {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+
+  .all-about-user-block {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    .main-page-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .main-page-right {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
 }
 
-.play-button {
-  display: flex;
-  flex-direction: column;
-  button {
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-  }
-  .random-player-button {
-    border: 1px solid #000000;
-    font-size: 1.3rem;
-  }
+.left--block {
+  min-width: 34rem;
+  min-height: 9.5rem;
+  background-color: #3e3e3e;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.right--block {
+  min-width: 12rem;
+  min-height: 24.5rem;
+  background-color: #3e3e3e;
+  border-radius: 0.5rem;
 }
 </style>

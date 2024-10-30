@@ -5,7 +5,9 @@
 </template>
 
 <style lang="scss">
-.default-layout {
+$background: #202020;
+#__nuxt .default-layout {
+  background-color: $background;
   display: flex;
   align-items: center;
   justify-content: center;

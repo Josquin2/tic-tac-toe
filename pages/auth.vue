@@ -123,7 +123,12 @@ watch(error, () => {
     <input type="text" placeholder="Username" v-model="username" />
 
     <div class="password-block">
-      <input type="password" placeholder="Password" v-model="password" />
+      <input
+        type="password"
+        placeholder="Password"
+        @keyup.enter="onButtonClick(button)"
+        v-model="password"
+      />
       <input
         type="password"
         class="second__password"
@@ -142,14 +147,15 @@ watch(error, () => {
 </template>
 
 <style lang="scss">
+$main-color: #3e3e3e;
+
 .auth-block {
   padding: 3rem 5rem;
-  background-color: #f9f9f9;
+  background-color: $main-color;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 1rem;
 
   .auth__header {
     h2 {
@@ -169,13 +175,17 @@ watch(error, () => {
   }
 
   input {
-    height: 2.5rem;
     min-width: 20rem;
-    border-radius: 0.25rem;
-    border: 1px solid #e1e1e1;
     padding-left: 0.75rem;
-    background-color: #f3f3f3;
     transition: 0.3s;
+  }
+
+  button,
+  input {
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #606060;
+    background-color: #474747;
   }
 
   .password-block {
@@ -220,9 +230,6 @@ watch(error, () => {
 
   button {
     width: 100%;
-    min-height: 2.5rem;
-    border: 1px solid #e1e1e1;
-    border-radius: 0.25rem;
     font-size: 1.25rem;
   }
 }

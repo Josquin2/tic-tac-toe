@@ -2,7 +2,15 @@
 @import url("./keyframes.scss");
 @import url("./main-game.scss");
 
+$background: #202020;
+$main-color: #3e3e3e;
+$font-color: #cfcfcf;
+
 #__nuxt {
   min-height: 100vh;
   min-width: 100vw;
+  background-color: $background;
+  * {
+    color: $font-color;
+  }
 }
